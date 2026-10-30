@@ -1,4 +1,4 @@
-# claude-rules 要件定義書
+# claudecode-initial-settings 要件定義書
 
 - 作成日: 2026-10-30
 - ステータス: ドラフト
@@ -35,7 +35,7 @@ Claude Code で複数のプロジェクトを運用していると、どのプ�
 | 項目 | 方針 |
 |---|---|
 | ルールの置き場所 | 各リポジトリ内（`CLAUDE.md`、`.claude/` 配下）。グローバルには置かない |
-| 配布元 | 本リポジトリ `claude-rules` |
+| 配布元 | 本リポジトリ `claudecode-initial-settings` |
 | 配布元の置き場所 | 利用者が通常使うクローン先。固定パスは定めない |
 | 配布元の外に置くもの | なし。本リポジトリに属するものは、本リポジトリの外に一切置かない |
 | 管理の単位 | モジュール（関心ごとの単位） |
@@ -48,7 +48,7 @@ Claude Code で複数のプロジェクトを運用していると、どのプ�
 
 | 用語 | 意味 |
 |---|---|
-| 配布元 | 本リポジトリ `claude-rules` |
+| 配布元 | 本リポジトリ `claudecode-initial-settings` |
 | 適用先 | 共通ルールを取り込むプロジェクトのリポジトリ |
 | モジュール | 関心ごと単位でまとめた共通ルール一式 |
 | 版 | モジュールのバージョン（`v1`、`v2`、...） |
@@ -60,7 +60,7 @@ Claude Code で複数のプロジェクトを運用していると、どのプ�
 ### 6.1 配布元のディレクトリ構成
 
 ```
-claude-rules/
+claudecode-initial-settings/
   README.md                 # 本リポジトリの説明、モジュール一覧、各モジュールの最新版
   docs/
     requirements.md         # 本書
@@ -128,7 +128,7 @@ claude-rules/
 
 ### 6.6 導入記録
 
-- R-REC-1: 適用先の `.claude/claude-rules-history.txt` に、導入したモジュール・版・日付を一行ずつ追記する
+- R-REC-1: 適用先の `.claude/claudecode-initial-settings-history.txt` に、導入したモジュール・版・日付を一行ずつ追記する
 - R-REC-2: 導入記録は Claude Code への指示として読み込まれてはならない。そのため次を守る
   - Claude Code が自動で読み込む場所（`CLAUDE.md`、`.claude/rules/` 配下）には置かない
   - 拡張子を `.md` にせず、ルール文書と見分けがつくようにする
@@ -136,7 +136,7 @@ claude-rules/
   - ファイルの先頭に、指示ではなく記録であることを明記する
 
 ```
-# claude-rules の導入記録。Claude Code への指示ではない。
+# claudecode-initial-settings の導入記録。Claude Code への指示ではない。
 module-a@v1 2026-10-30
 module-b@v2 2026-10-30
 ```
@@ -201,7 +201,7 @@ module-b@v2 2026-10-30
 
 ## 導入記録
 
-`.claude/claude-rules-history.txt` の末尾に次の 1 行を追記してください。ファイルがなければ、先頭行に `# claude-rules の導入記録。Claude Code への指示ではない。` を書いて作成してください。
+`.claude/claudecode-initial-settings-history.txt` の末尾に次の 1 行を追記してください。ファイルがなければ、先頭行に `# claudecode-initial-settings の導入記録。Claude Code への指示ではない。` を書いて作成してください。
 
 ```
 <module-name>@v<N> <今日の日付 YYYY-MM-DD>

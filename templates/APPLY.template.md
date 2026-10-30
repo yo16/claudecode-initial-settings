@@ -33,7 +33,7 @@
 
 ## 導入記録
 
-`.claude/claude-rules-history.txt` の末尾に次の 1 行を追記してください。ファイルがなければ、先頭行に `# claude-rules の導入記録。Claude Code への指示ではない。` を書いて作成してください。
+`.claude/claudecode-initial-settings-history.txt` の末尾に次の 1 行を追記してください。ファイルがなければ、先頭行に `# claudecode-initial-settings の導入記録。Claude Code への指示ではない。` を書いて作成してください。
 
 ```
 <module-name>@v<N> <今日の日付 YYYY-MM-DD>

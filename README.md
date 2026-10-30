@@ -31,7 +31,7 @@ Claude Code 用の共通ルールを、版付きで管理して各プロジェ�
 
 ## 導入記録
 
-適用先の `.claude/claude-rules-history.txt` に、導入したモジュールと版が 1 行ずつ記録される。参考情報であり、Claude Code への指示ではない。
+適用先の `.claude/claudecode-initial-settings-history.txt` に、導入したモジュールと版が 1 行ずつ記録される。参考情報であり、Claude Code への指示ではない。
 
 ## 保守する人へ
 
