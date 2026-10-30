@@ -33,7 +33,7 @@
 
 ## git の運用
 
-- `git add`、`git commit`、`git push` は、ユーザーの指示を待たず Claude Code が自律的に行う。このリポジトリは、後述の Beads セクションでいう Team-maintainer 相当として明示的にオプトインする。
+- `git add`、`git commit`、`git push` は、ユーザーの指示を待たず Claude Code が自律的に行う。Beads の既定（指示がない限りコミットや push をしない）より本節を優先する。
 - コミットするタイミングは、ひとまとまりの作業が完了して内容を確認した時点とする。要件定義書の変更、モジュールや版の追加、`CLAUDE.md` や README の更新などが単位になる。途中の壊れた状態ではコミットしない。
 - 1 つのコミットには 1 つの関心ごとだけを含める。関係のない変更を混ぜない。
 - コミットメッセージは日本語で、何をなぜ変えたかが分かるように書く。件名は 1 行で簡潔にし、必要なら本文に理由を書く。
@@ -41,57 +41,11 @@
 - コミット前に `git status` で対象を確認し、公開できない情報が含まれていないことを確かめる。
 - 公開済みのコミットは書き換えない。`--amend` や `push --force` は使わない。
 
-<!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:1105d646 -->
-## Beads Issue Tracker
+## Beads によるタスク管理
 
-This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
-
-### Quick Reference
-
-```bash
-bd ready              # Find available work
-bd show <id>          # View issue details
-bd update <id> --claim  # Claim work
-bd close <id>         # Complete work
-```
-
-### Rules
-
-- Use `bd` for ALL task tracking — do NOT use TodoWrite, TaskCreate, or markdown TODO lists
-- Run `bd prime` for detailed command reference and session close protocol
-- Use `bd remember` for persistent knowledge — do NOT use MEMORY.md files
-
-**Architecture in one line:** issues live in a local Dolt DB; sync uses `refs/dolt/data` on your git remote; `.beads/issues.jsonl` is a passive export. See https://github.com/gastownhall/beads/blob/main/docs/core-concepts/sync-concepts.md for details and anti-patterns.
-
-## Agent Context Profiles
-
-The managed Beads block is task-tracking guidance, not permission to override repository, user, or orchestrator instructions.
-
-- **Conservative (default)**: Use `bd` for task tracking. Do not run git commits, git pushes, or Dolt remote sync unless explicitly asked. At handoff, report changed files, validation, and suggested next commands.
-- **Minimal**: Keep tool instruction files as pointers to `bd prime`; use the same conservative git policy unless active instructions say otherwise.
-- **Team-maintainer**: Only when the repository explicitly opts in, agents may close beads, run quality gates, commit, and push as part of session close. A current "do not commit" or "do not push" instruction still wins.
-
-## Session Completion
-
-This protocol applies when ending a Beads implementation workflow. It is subordinate to explicit user, repository, and orchestrator instructions.
-
-1. **File issues for remaining work** - Create beads for anything that needs follow-up
-2. **Run quality gates** (if code changed) - Tests, linters, builds
-3. **Update issue status** - Close finished work, update in-progress items
-4. **Handle git/sync by active profile**:
-   ```bash
-   # Conservative/minimal/default: report status and proposed commands; wait for approval.
-   git status
-
-   # Team-maintainer opt-in only, unless current instructions forbid it:
-   git pull --rebase
-   git push
-   git status
-   ```
-5. **Hand off** - Summarize changes, validation, issue status, and any blocked sync/commit/push step
-
-**Critical rules:**
-- Explicit user or orchestrator instructions override this Beads block.
-- Do not commit or push without clear authority from the active profile or the current user request.
-- If a required sync or push is blocked, stop and report the exact command and error.
-<!-- END BEADS INTEGRATION -->
+- タスク管理には `bd`（beads）を使う。TodoWrite や Markdown の TODO リストは使わない。
+- コマンドの詳細はセッション開始時にフックで読み込まれる `bd prime` の出力を参照する。コンテキストが失われたら `bd prime` を実行し直す。
+- 着手前に Issue を作り（`bd create`）、作業中は claim し（`bd update <id> --claim`）、終わったら閉じる（`bd close <id>`）。Issue の接頭辞は `claudecode-initial-settings`。
+- セッションを終えるときは、残作業を Issue にし、完了した Issue を閉じ、前節「git の運用」に従ってコミットと push を行う。
+- 次のセッションに引き継ぎたい知見は `bd remember` で残す。
+- Issue のデータは `.beads/` 配下の Dolt データベースにある。git の push 時にフック経由で `refs/dolt/data` に同期される。`.beads/issues.jsonl` は書き出しであり、正本ではない。
