@@ -48,4 +48,4 @@
 - 着手前に Issue を作り（`bd create`）、作業中は claim し（`bd update <id> --claim`）、終わったら閉じる（`bd close <id>`）。Issue の接頭辞は `claudecode-initial-settings`。
 - セッションを終えるときは、残作業を Issue にし、完了した Issue を閉じ、前節「git の運用」に従ってコミットと push を行う。
 - 次のセッションに引き継ぎたい知見は `bd remember` で残す。
-- Issue のデータは `.beads/` 配下の Dolt データベースにある。git の push 時にフック経由で `refs/dolt/data` に同期される。`.beads/issues.jsonl` は書き出しであり、正本ではない。
+- Issue のデータは `.beads/` 配下の Dolt データベースにある。リモートとの同期は `bd dolt push` と `bd dolt pull` で行う。`.beads/issues.jsonl` は書き出しであり、正本ではない。
