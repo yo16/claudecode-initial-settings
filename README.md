@@ -8,10 +8,10 @@ Claude Code 用の共通ルールを、版付きで管理して各プロジェ�
 
 1. このリポジトリを手元に clone しておく。置き場所は自由。
 2. ルールを取り込みたいプロジェクトのリポジトリで Claude Code を起動する。
-3. 次のように指示する。`<配布元のクローン>` は手順 1 の clone 先に置き換える。
+3. 次のように指示する。`<配布元のクローン>` は手順 1 の clone 先に、`<version>` は下のモジュール一覧にある版（例: `v1`）に置き換える。
 
 ```
-<配布元のクローン>/modules/<module-name>/v1/APPLY.md を読んで、このリポジトリに適用して
+<配布元のクローン>/modules/<module-name>/<version>/APPLY.md を読んで、このリポジトリに適用して
 ```
 
 4. Claude Code が手順を実行し、完了条件を確認して報告する。内容を確認してコミットする。
@@ -38,3 +38,4 @@ Claude Code 用の共通ルールを、版付きで管理して各プロジェ�
 - 仕様: [docs/requirements.md](docs/requirements.md)
 - このリポジトリでの Claude Code の使い方: [CLAUDE.md](CLAUDE.md)
 - 新しい版を作るときは [templates/APPLY.template.md](templates/APPLY.template.md) をコピーして埋める。公開済みの版のディレクトリは書き換えず、新しい版を作る。
+- 版は `vN.M` の形（例: `v2.0`、`v2.1`）。要素の追加など少し大きな変更は N を上げ、指示の言い回しなど小さな変更は M を上げる。初版だけ `v1` の表記で、その次は `v2.0`。

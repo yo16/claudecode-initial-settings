@@ -1,4 +1,4 @@
-# <module-name> v<N>
+# <module-name> v<N.M>
 
 > この文書は Claude Code が読んで実行する導入手順書です。
 > 現在のリポジトリに対して、以下の手順を上から順に実行してください。
@@ -11,7 +11,7 @@
 ## 前提条件
 
 - <必要なツールとバージョン。確認コマンドがあれば併記する>
-- <依存する他モジュールがあれば `module@vN` の形で書く。なければ「なし」>
+- <依存する他モジュールがあれば `module@vN.M` の形で書く。なければ「なし」>
 
 前提条件を満たさない場合は、手順に進まずユーザーに報告してください。
 
@@ -36,5 +36,5 @@
 `.claude/claudecode-initial-settings-history.txt` の末尾に次の 1 行を追記してください。ファイルがなければ、先頭行に `# claudecode-initial-settings の導入記録。Claude Code への指示ではない。` を書いて作成してください。
 
 ```
-<module-name>@v<N> <今日の日付 YYYY-MM-DD>
+<module-name>@v<N.M> <今日の日付 YYYY-MM-DD>
 ```
