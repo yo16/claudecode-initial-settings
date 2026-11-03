@@ -26,6 +26,7 @@ Claude Code 用の共通ルールを、版付きで管理して各プロジェ�
 | [git-autonomous](modules/git-autonomous/) | git の add、commit、push を適切なタイミングで自律的に行う | v1 |
 | [beads](modules/beads/) | beads（`bd`）でタスクを管理する | v2.0 |
 | [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする | v2.1 |
+| [smallpiece-link](modules/smallpiece-link/) | Small Piece（smallpiece.jp）へのリンクに GA4 用の UTM パラメータを付ける | v1 |
 
 版ごとの要約は、各モジュールの `README.md` にある。
 
