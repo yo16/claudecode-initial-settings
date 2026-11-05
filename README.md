@@ -27,6 +27,7 @@ Claude Code 用の共通ルールを、版付きで管理して各プロジェ�
 | [beads](modules/beads/) | beads（`bd`）でタスクを管理する | v2.0 |
 | [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする | v2.1 |
 | [smallpiece-link](modules/smallpiece-link/) | Small Piece（smallpiece.jp）へのリンクに GA4 用の UTM パラメータを付ける | v1 |
+| [infra-readme](modules/infra-readme/) | 使用する外部サービスなど、インフラの情報を `README.md` に書いて最新に保つ | v1 |
 
 版ごとの要約は、各モジュールの `README.md` にある。
 
