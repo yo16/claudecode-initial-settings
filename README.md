@@ -18,6 +18,27 @@ Claude Code 用の共通ルールを、版付きで管理して各プロジェ�
 
 複数のモジュールを一度に指示してもよい。導入後のファイルは、各プロジェクトで自由に改変してよい。
 
+## 新しいリポジトリの初期設定
+
+新しいリポジトリを作ったら、そのリポジトリで Claude Code を起動して、次のプロンプトを貼り付ける。全モジュールの最新版をまとめて適用する。`<配布元のクローン>` は clone 先のパスに置き換える。
+
+```
+配布元のクローンは <配布元のクローン> にある。その中の次の APPLY.md を、上から順に 1 つずつ読んで、このリポジトリに適用して。
+前提条件を満たさないモジュールは飛ばして次に進み、飛ばしたモジュールと理由を最後にまとめて報告して。
+
+- modules/japanese/v1/APPLY.md
+- modules/git-autonomous/v1/APPLY.md
+- modules/beads/v2.0/APPLY.md
+- modules/handoff/v2.1/APPLY.md
+- modules/infra-readme/v1/APPLY.md
+- modules/smallpiece-link/v1/APPLY.md
+```
+
+- 貼り付ける前に、リポジトリを git で管理して push 先のリモートを設定し、`bd` 1.3.2 以上をインストールしておく。`git-autonomous` と `beads` の前提条件である。
+- 要らないモジュールは、その行を消してから貼り付ける。`smallpiece-link` は、Small Piece へのリンクを置くプロジェクトだけで使う。
+- 行の順番は変えない。`handoff` は、`git-autonomous` と `beads` が先に適用されていることを前提にしている。
+- このプロンプトは版やモジュールを追加するたびに書き換えており、常に最新版を指している。
+
 ## モジュール一覧
 
 | モジュール | 内容 | 最新版 |
