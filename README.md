@@ -30,7 +30,7 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 - modules/japanese/v1/APPLY.md
 - modules/git-autonomous/v1/APPLY.md
 - modules/beads/v2.0/APPLY.md
-- modules/handoff/v2.1/APPLY.md
+- modules/handoff/v3.0/APPLY.md
 - modules/infra-readme/v1/APPLY.md
 - modules/service-readme/v1/APPLY.md
 - modules/smallpiece-link/v1/APPLY.md
@@ -49,7 +49,7 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 | [japanese](modules/japanese/) | ユーザーとのやり取りを日本語で行う | v1 |
 | [git-autonomous](modules/git-autonomous/) | git の add、commit、push を適切なタイミングで自律的に行う | v1 |
 | [beads](modules/beads/) | beads（`bd`）でタスクを管理する | v2.0 |
-| [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする | v2.1 |
+| [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする。進められるところでは止まらない | v3.0 |
 | [smallpiece-link](modules/smallpiece-link/) | Small Piece（smallpiece.jp）へのリンクに GA4 用の UTM パラメータを付ける | v1 |
 | [infra-readme](modules/infra-readme/) | 使用する外部サービスなど、インフラの情報を `README.md` に書いて最新に保つ | v1 |
 | [service-readme](modules/service-readme/) | サービス名、段階、URL、公開日、UptimeRobot monitor ID などサービスの基本情報を `README.md` に書いて最新に保つ | v1 |
