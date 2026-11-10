@@ -32,12 +32,14 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 - modules/beads/v2.0/APPLY.md
 - modules/handoff/v2.1/APPLY.md
 - modules/infra-readme/v1/APPLY.md
+- modules/service-readme/v1/APPLY.md
 - modules/smallpiece-link/v1/APPLY.md
 ```
 
 - 貼り付ける前に、リポジトリを git で管理して push 先のリモートを設定し、`bd` 1.3.2 以上をインストールしておく。`git-autonomous` と `beads` の前提条件である。
-- 要らないモジュールは、その行を消してから貼り付ける。`smallpiece-link` は、Small Piece へのリンクを置くプロジェクトだけで使う。
-- 行の順番は変えない。`handoff` は、`git-autonomous` と `beads` が先に適用されていることを前提にしている。
+- 要らないモジュールは、その行を消してから貼り付ける。`service-readme` は、Web サービスなど利用者に公開するものを作るプロジェクトで使う。`smallpiece-link` は、Small Piece へのリンクを置くプロジェクトだけで使う。
+- 行の順番は変えない。`handoff` は、`git-autonomous` と `beads` が先に適用されていることを前提にしている。`service-readme` は、`infra-readme` が作る「インフラ」節を使うので、その後に置く。
+- 適用の途中で、`service-readme` はサービスの段階や URL などを、`smallpiece-link` は `utm_source` に使うサービス名を尋ねる。答えると続きが進む。
 - このプロンプトは版やモジュールを追加するたびに書き換えており、常に最新版を指している。
 
 ## モジュール一覧
@@ -50,6 +52,7 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 | [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする | v2.1 |
 | [smallpiece-link](modules/smallpiece-link/) | Small Piece（smallpiece.jp）へのリンクに GA4 用の UTM パラメータを付ける | v1 |
 | [infra-readme](modules/infra-readme/) | 使用する外部サービスなど、インフラの情報を `README.md` に書いて最新に保つ | v1 |
+| [service-readme](modules/service-readme/) | サービス名、段階、URL、公開日、UptimeRobot monitor ID などサービスの基本情報を `README.md` に書いて最新に保つ | v1 |
 
 版ごとの要約は、各モジュールの `README.md` にある。
 
