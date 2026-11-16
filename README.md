@@ -28,6 +28,7 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 適用が終わったら、clone した一時ディレクトリを削除して。
 
 - modules/japanese/v1/APPLY.md
+- modules/one-question/v1/APPLY.md
 - modules/git-autonomous/v1/APPLY.md
 - modules/beads/v2.0/APPLY.md
 - modules/handoff/v3.0/APPLY.md
@@ -47,6 +48,7 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 | モジュール | 内容 | 最新版 |
 |---|---|---|
 | [japanese](modules/japanese/) | ユーザーとのやり取りを日本語で行う | v1 |
+| [one-question](modules/one-question/) | ユーザーへの質問を一度に 1 つだけにする。まとめて尋ねない | v1 |
 | [git-autonomous](modules/git-autonomous/) | git の add、commit、push を適切なタイミングで自律的に行う | v1 |
 | [beads](modules/beads/) | beads（`bd`）でタスクを管理する | v2.0 |
 | [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする。進められるところでは止まらない | v3.0 |
