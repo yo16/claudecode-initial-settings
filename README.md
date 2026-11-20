@@ -34,12 +34,14 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 - modules/handoff/v3.0/APPLY.md
 - modules/infra-readme/v1/APPLY.md
 - modules/service-readme/v1/APPLY.md
+- modules/github-actions/v1/APPLY.md
 - modules/smallpiece-link/v1/APPLY.md
 ```
 
 - 貼り付ける前に、リポジトリを git で管理して push 先のリモートを設定し、`bd` 1.3.2 以上をインストールしておく。`git-autonomous` と `beads` の前提条件である。
 - 要らないモジュールは、その行を消してから貼り付ける。`service-readme` は、Web サービスなど利用者に公開するものを作るプロジェクトで使う。`smallpiece-link` は、Small Piece へのリンクを置くプロジェクトだけで使う。
 - 行の順番は変えない。`handoff` は、`git-autonomous` と `beads` が先に適用されていることを前提にしている。`service-readme` は、`infra-readme` が作る「インフラ」節を使うので、その後に置く。
+- `github-actions` は、既にワークフローがあるリポジトリでは、消費を減らせる箇所を点検して報告する。ワークフローは書き換えない。
 - 適用の途中で、`service-readme` はサービスの段階や URL などを、`smallpiece-link` は `utm_source` に使うサービス名を尋ねる。答えると続きが進む。
 - このプロンプトは版やモジュールを追加するたびに書き換えており、常に最新版を指している。
 
@@ -52,6 +54,7 @@ https://github.com/yo16/claudecode-initial-settings.git を、このリポジト
 | [git-autonomous](modules/git-autonomous/) | git の add、commit、push を適切なタイミングで自律的に行う | v1 |
 | [beads](modules/beads/) | beads（`bd`）でタスクを管理する | v2.0 |
 | [handoff](modules/handoff/) | 停止するたびに git と beads の状態を揃え、まっさらなコンテキストから再開できるようにする。進められるところでは止まらない | v3.0 |
+| [github-actions](modules/github-actions/) | GitHub Actions の無料枠（実行時間と保存容量）を節約して使う。枠はアカウント全体で共有しているため | v1 |
 | [smallpiece-link](modules/smallpiece-link/) | Small Piece（smallpiece.jp）へのリンクに GA4 用の UTM パラメータを付ける | v1 |
 | [infra-readme](modules/infra-readme/) | 使用する外部サービスなど、インフラの情報を `README.md` に書いて最新に保つ | v1 |
 | [service-readme](modules/service-readme/) | サービス名、段階、URL、公開日、UptimeRobot monitor ID などサービスの基本情報を `README.md` に書いて最新に保つ | v1 |
